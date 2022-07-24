@@ -1,0 +1,48 @@
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    font-size: 1rem;
+    gap: 7px;
+}
+
+.pagination .page-num{
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    overflow: hidden;
+    color: #15023a;
+}
+
+.pagination .page-num:hover{
+    background-color: #15023a;
+    color: white;
+    transition: 0.9s;
+}
+
+.pagination .active{
+    color: #15023a;
+    border-bottom: 1px solid #15023a;
+}
+
+.contestantDet::-webkit-inner-spin-button,
+.contestantDet::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.contestantDet {
+  -moz-appearance: textfield;
+}
+
+.contestantDet {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: none
+}

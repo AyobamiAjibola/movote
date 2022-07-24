@@ -1,0 +1,13 @@
+@import "../../../../global.scss";
+
+
+.footer {
+    background-color: $mainColor;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .container{
+        color: white;;
+    }
+}
