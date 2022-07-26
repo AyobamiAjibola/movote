@@ -16,8 +16,7 @@ interface Pagination {
   isLoading: boolean,
   isErr: any,
   query: string,
-  data: any,
-  errors: any
+  data: any
 }
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -39,8 +38,7 @@ export default function Contestants() {
     isLoading: true,
     isErr: null,
     query: '',
-    data: ([]),
-    errors: null
+    data: ([])
   })
 
   const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
@@ -59,11 +57,12 @@ export default function Contestants() {
     try {
       const res = await axios.get(`http://localhost:8000/contestant/con/${id}?q=${values.query}`)
 
-      if(res.data.data === null){
-        setValues({...values, errors: res.data.errors[0].msg, isLoading: false});
-      } else if (res.data.data !== null) {
-        setValues({...values, data: res.data, isLoading: false, isErr: null})
-      }
+        if(res.data.data === null){
+          setValues({...values, isLoading: false});
+        } else if (res.data.data !== null) {
+          setValues({...values, data: res.data, isLoading: false, isErr: null})
+        }
+
     } catch (error: any) {
       error.response.status >= 400 &&
       setValues({...values, isLoading: false, isErr: "Server error, please reload the page!"})
@@ -71,7 +70,9 @@ export default function Contestants() {
   }
 
   useEffect(() => {
-    if (values.query.length === 0 || values.query.length > 2) getContest();
+    if (values.query.length === 0 || values.query.length > 2) {
+      getContest()
+    }
   },[values.query, state.updateList])
 
   useEffect(() => {
@@ -216,7 +217,7 @@ export default function Contestants() {
         </Box>
       </Box>
       {values.isLoading && <LoadingPage/>}
-      {values.errors && <Typography sx={{color: "red"}}>{values.errors}</Typography>}
+      {/* {values.errors && <Typography sx={{color: "red"}}>{values.errors}</Typography>} */}
       {!state.growTransition &&
         <Grow
           in={!state.growTransition}
@@ -240,94 +241,96 @@ export default function Contestants() {
               borderColor: "rgba(138,128,156,0.2)"
             }}
           >
-            {Object.values(currItems)?.map((d: any) => (
-            <Box component="div" key={d._id}
-              sx={{display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-              <Box
-                sx={{
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: 180,
-                  height: 200,
-                  backgroundColor: "#D0CCD7",
-                  boxShadow: 4,
-                  borderRadius: 1.5,
-                  marginTop: 5,
-                  pt: 8,
-                  mr: 1, ml: 2, mb: 4
-                }}
-              >
-                <Typography variant="body2" component="span"
-                  sx={{
-                    fontWeight: 600,
-                    fontSize: 25,
-                    color: "#2C1B4D"
+            {currItems && currItems.length > 0 ?
+              (Object.values(currItems)?.map((d: any) => (
+              <Box component="div" key={d._id}
+                sx={{display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
                   }}
                 >
-                  {d.username}
-                </Typography>
-                {/* <Typography variant="body2"
+                <Box
                   sx={{
-                    fontWeight: 600,
-                    fontSize: 25,
-                    border: "1px dashed rgba(138,128,156,0.2)",
-                    width: "50%",
-                    textAlign: "center",
-                    mt: 0.8,
-                    color: "#5B4D75"
-                  }}
-                >
-                  {d.vote}
-                </Typography> */}
-                <Button
-                  variant="contained"
-                  component={Link}
-                  to={`/vote/${d.username}`}
-                  onClick={() => setState({...state, change: true})}
-                  sx={{
-                    width: "30%",
-                    color: "white",
-                    backgroundColor: "#433461",
+                    position: "relative",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: 180,
+                    height: 200,
+                    backgroundColor: "#D0CCD7",
                     boxShadow: 4,
-                    '&:hover': {backgroundColor: "white", color: "#433461", fontWeight: 800},
-                    mt: 2, mb: 2
+                    borderRadius: 1.5,
+                    marginTop: 5,
+                    pt: 8,
+                    mr: 1, ml: 2, mb: 4
                   }}
                 >
-                  Vote
-                </Button>
-              </Box>
-              <Box
-                sx={{
-                  position: "absolute",
-                  marginTop: -22,
-                  width: 130,
-                  height: 130,
-                  borderRadius: 1.5,
-                  boxShadow: 3, ml: 1
-                }}
-              >
-                <img
-                  alt="contest"
-                  crossOrigin="anonymous"
-                  src={`http://localhost:8000/${d !== undefined && d.image}`}
-                  style={{
+                  <Typography variant="body2" component="span"
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: 25,
+                      color: "#2C1B4D"
+                    }}
+                  >
+                    {d.username}
+                  </Typography>
+                  {/* <Typography variant="body2"
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: 25,
+                      border: "1px dashed rgba(138,128,156,0.2)",
+                      width: "50%",
+                      textAlign: "center",
+                      mt: 0.8,
+                      color: "#5B4D75"
+                    }}
+                  >
+                    {d.vote}
+                  </Typography> */}
+                  <Button
+                    variant="contained"
+                    component={Link}
+                    to={`/vote/${d.username}`}
+                    onClick={() => setState({...state, change: true})}
+                    sx={{
+                      width: "30%",
+                      color: "white",
+                      backgroundColor: "#433461",
+                      boxShadow: 4,
+                      '&:hover': {backgroundColor: "white", color: "#433461", fontWeight: 800},
+                      mt: 2, mb: 2
+                    }}
+                  >
+                    Vote
+                  </Button>
+                </Box>
+                <Box
+                  sx={{
                     position: "absolute",
-                    marginLeft: 0, marginRight: 0,
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "cover"
+                    marginTop: -22,
+                    width: 130,
+                    height: 130,
+                    borderRadius: 1.5,
+                    boxShadow: 3, ml: 1
                   }}
-                />
+                >
+                  <img
+                    alt="contest"
+                    crossOrigin="anonymous"
+                    src={`http://localhost:8000/${d !== undefined && d.image}`}
+                    style={{
+                      position: "absolute",
+                      marginLeft: 0, marginRight: 0,
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                </Box>
               </Box>
-            </Box>
-            ))}
+              ))) : <Typography sx={{color: "#4C4C4C"}} variant="h6">No results found!</Typography>
+            }
           </Box>
         </Grow>}
         <Box
@@ -361,7 +364,9 @@ export default function Contestants() {
           backgroundColor: "#433461"
         }}
         >
-          footer
+          <Typography variant="body1" sx={{color: "white"}}>
+            copyright@vote.com
+          </Typography>
       </Box>
     </>
   )

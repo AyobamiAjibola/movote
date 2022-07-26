@@ -231,7 +231,7 @@ useEffect(() => {
             </Table>
             {currItems.length === 0 &&
               <Typography sx={{fontWeight: "400", textAlign: "center", color: "red"}}>
-                There are no ongoing contest at this time.
+                No result found!
               </Typography>
             }
           </TableContainer>

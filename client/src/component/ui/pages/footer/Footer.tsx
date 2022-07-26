@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div className='footer'>
       <div className="container">
-        <em>copyright@vote.com</em>
+        <span>copyright@vote.com</span>
       </div>
     </div>
   )

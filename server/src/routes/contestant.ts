@@ -72,9 +72,9 @@ router.get("/con/:id", async (req: Request, res: Response) => {
         const { q } = req.query;
         const keys = ["username"];
         const search = (data: any) => {
-        return data.filter((item: any) =>
+            return data.filter((item: any) =>
             keys.some((key) => item[key].toLowerCase().includes(q))
-        );
+            );
         };
 
         const contestant = await Contestant.find({userId: fetch._id}).populate("")
@@ -88,6 +88,7 @@ router.get("/con/:id", async (req: Request, res: Response) => {
                 data: null,
             })
         }
+
         res.json(q ? search(contestant) : contestant)
     } else if (fetch.isAdmin === 'userMul'){
         const contestant = await ContestantMul.find({userId: fetch._id}).populate("")

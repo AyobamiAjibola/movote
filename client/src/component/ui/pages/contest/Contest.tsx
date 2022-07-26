@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./contest.scss";
 import axios from "axios";
-import { Search, SentimentVeryDissatisfied } from "@mui/icons-material";
+import { Search } from "@mui/icons-material";
 import { Box, CircularProgress, Grid, InputBase, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -68,31 +68,9 @@ export default function Contest() {
       </Grid>
       <div className="container">
         {values.isLoading && <CircularProgress /> }
-        {data.length === 0 &&
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "40%",
-              height: 250,
-              boxShadow: 3,
-              backgroundColor: "white",
-              borderRadius: 3,
-              mt: 4, mb: 2,
-              flexDirection: "column"
-            }}
-          >
-            <SentimentVeryDissatisfied sx={{ fontSize: 100,}} />
-            <Typography sx={{fontWeight: "100", fontSize: 50, textAlign: "center"}}>
-              Sorry
-            </Typography>
-            <Typography sx={{fontWeight: "600", textAlign: "center"}}>
-              There are no ongoing contest at this time.
-            </Typography>
-          </Box>
-        }
-        {!values.isErr ? (data.map((d: any)=>(
+        {!values.isErr && <div style={{color: "red"}}>{values.isErr}</div>}
+        {data && data.length > 0 ?
+        (data.map((d: any) => (
           <div className="item" key={d._id}>
             <h3
               style={{
@@ -113,9 +91,25 @@ export default function Contest() {
             </Link>
           </div>
         ))) :
-        <div style={{color: "red"}}>
-          {values.isErr}
-        </div>}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "40%",
+            height: 150,
+            mb: 2,
+            flexDirection: "column"
+          }}
+          >
+          <Typography sx={{fontWeight: "100", fontSize: 50, textAlign: "center"}}>
+            Sorry
+          </Typography>
+          <Typography sx={{fontWeight: "600", textAlign: "center"}}>
+            No contest found!.
+          </Typography>
+        </Box>
+        }
       </div>
     </div>
   )
