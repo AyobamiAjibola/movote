@@ -2,9 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "./dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node ./dist/server.js",
+    "build": "npx tsc",
+    "dist": "tsc -p .",
+    "dev": "nodemon ./src/server.ts",
+    "type": "module",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ayobami",
