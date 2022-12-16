@@ -1,5 +1,8 @@
 import { ArrowCircleUp, Close, Save } from '@mui/icons-material';
-import { Box, Checkbox, FilledInput, FormControl, FormControlLabel, FormGroup, Grid, Grow, IconButton, InputLabel, MenuItem, Select, Snackbar, TextField, Typography, styled, TextareaAutosize, FormLabel } from '@mui/material'
+import {    Box, Checkbox, FilledInput, FormControl, FormControlLabel,
+            FormGroup, Grid, Grow, IconButton, InputLabel, MenuItem, Select,
+            Snackbar, TextField, Typography, styled, FormLabel
+        } from '@mui/material'
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -150,8 +153,8 @@ export default function AddContest({setContest, contest, setUpdList}: props) {
             </Snackbar> }
             <Grid item mb={3} mt={2}
                 sx={{
-                display: "flex",
-                justifyContent: "right"
+                    display: "flex",
+                    justifyContent: "right"
                 }}
             >
                 <IconButton onClick={handleClosed}>
@@ -163,8 +166,8 @@ export default function AddContest({setContest, contest, setUpdList}: props) {
                 component='form'
                 encType="multipart/form-data"
                 sx={{
-                display: "flex",
-                alignItems: "center"
+                    display: "flex",
+                    alignItems: "center"
                 }}
             >
                 <Grid item xs={12}>
@@ -419,13 +422,13 @@ export default function AddContest({setContest, contest, setUpdList}: props) {
                     </Box>
                 </Grid>
                 <Grid
-                item xs={12}
-                sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexDirection: "column"
-                }}
+                    item xs={12}
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexDirection: "column"
+                    }}
                 >
                 <LoadingButton
                     type="submit"

@@ -1,0 +1,17 @@
+.contestlist {
+  font-size: 14px;
+  margin-right: 50px;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .contestlist {
+    margin-right: 20px;
+  }
+}
+.contestlist.active {
+  background-color: #15023a;
+  color: white;
+}/*# sourceMappingURL=contestlist.css.map */

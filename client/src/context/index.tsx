@@ -113,7 +113,7 @@ const UserProvider = ({children}: any) => {
    return (
      <UserContext.Provider value={[user, setUser]}>
       <SnackContext.Provider value={[state, setState]}>
-          {children}
+        {children}
       </SnackContext.Provider>
      </UserContext.Provider>
    )

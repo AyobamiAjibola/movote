@@ -3,7 +3,7 @@ import fs from 'fs';
 
 export const updateMulterValidation = (req: Request, res: Response, next: NextFunction) => {
     try {
-
+        console.log(req.file?.path)
         if (typeof (req.file) === 'undefined') {
             return res.status(400).json({
                 errors: 'Please upload an image'

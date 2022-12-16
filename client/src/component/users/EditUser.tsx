@@ -344,7 +344,7 @@ export default function EditUser({response}: FormProps) {
               maxLength: {
                 value: 200,
                 message: "Contest description should not be more than 200 characters"
-                },
+              },
             })}
             autoComplete="contest"
             error={!!errors?.description}

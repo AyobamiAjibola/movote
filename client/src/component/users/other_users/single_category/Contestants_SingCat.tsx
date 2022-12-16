@@ -62,7 +62,7 @@ interface StatusProps{
 }
 
 export default function Contestants_SingCat({activateAll, deActivateAll, activate, msgLoad}:StatusProps) {
-  
+
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState<any>([]);
   const [open, setOpen] = useState(false);

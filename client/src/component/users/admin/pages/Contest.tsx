@@ -94,7 +94,7 @@ const deleteContest = async () => {
   try {
     await axios.delete(`http://localhost:8000/user/users/${values.delId}`)
 
-    setDatas(datas.filter((data: { _id: string; }) => data._id !== values.delId));
+    setDatas(datas.filter((data: { _id: string }) => data._id !== values.delId));
     handleClose();
     setState({...state, delContest: true})
   } catch (error) {

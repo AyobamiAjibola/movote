@@ -16,9 +16,9 @@ router.get("/users", authorizeandadmin, async (req: Request, res: Response) => {
       const { q } = req.query;
       const keys = ["contestName", "company", "isAdmin"];
       const search = (data: any) => {
-      return data.filter((item: any) =>
-          keys.some((key) => item[key].toLowerCase().includes(q))
-      );
+        return data.filter((item: any) =>
+            keys.some((key) => item[key].toLowerCase().includes(q))
+        );
       };
       const user = await User
           .find({email: {$ne: "admin@gmail.com"}})

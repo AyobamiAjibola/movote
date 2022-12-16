@@ -17,8 +17,8 @@ export default function Contest() {
   const [values, setValues] = useState<loadingErr>({
     isLoading: true,
     isErr: null,
-  })
-
+  });
+  
   const getUsers = async () => {
     try {
       const res = await axios.get(`/user/contest_list?q=${query}`)

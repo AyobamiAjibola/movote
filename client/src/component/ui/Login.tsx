@@ -64,10 +64,12 @@ export default function Login() {
         email,
         password,
       });
+
       setIsLoading(false)
       if(login.errors.length){
         return setErrMsg(login.errors[0].msg)
       }
+
       setState({
         data: {
           id: login.data.user.id,
