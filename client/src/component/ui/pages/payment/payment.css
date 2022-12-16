@@ -1,0 +1,142 @@
+.payment {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .payment {
+    justify-content: space-around;
+  }
+}
+.payment h1 {
+  font-size: 50px;
+  color: #15023a;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .payment h1 {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+}
+.payment .container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .payment .container {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+.payment .container .card {
+  width: 300px;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px -8px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  transition: all 1s ease;
+}
+@media (max-width: 768px) {
+  .payment .container .card {
+    height: 250px;
+    margin: 5px 0;
+  }
+}
+.payment .container .card.featured {
+  width: 350px;
+  height: 90%;
+  margin: 0 25px;
+}
+@media (max-width: 768px) {
+  .payment .container .card.featured {
+    width: 300px;
+    height: 250px;
+    margin: 1px;
+  }
+}
+.payment .container .card:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .payment .container .card:hover {
+    transform: none;
+  }
+}
+.payment .container .card .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.payment .container .card .top .pack {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: crimson;
+}
+@media (max-width: 768px) {
+  .payment .container .card .top .pack {
+    font-size: 30px;
+  }
+}
+.payment .container .card .top .pack.size {
+  font-size: 40px;
+}
+@media (max-width: 768px) {
+  .payment .container .card .top .pack.size {
+    font-size: 23px;
+  }
+}
+.payment .container .card .top h3 {
+  font-weight: 400;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .payment .container .card .top h3 {
+    font-size: 15px;
+  }
+}
+.payment .container .card .center {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(250, 244, 245);
+  text-align: justify;
+}
+@media (max-width: 768px) {
+  .payment .container .card .center {
+    font-size: 15px;
+    padding: 5px;
+  }
+}
+.payment .container .card .center p {
+  font-weight: 400;
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  .payment .container .card .center p {
+    font-size: 11px;
+  }
+}
+.payment .container .card .bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.payment .container .card .bottom h1 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .payment .container .card .bottom h1 {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=payment.css.map */

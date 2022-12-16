@@ -1,0 +1,42 @@
+.app {
+  height: 100vh;
+}
+.app .sections {
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: dimgray;
+  position: relative;
+  top: 70px;
+  scroll-behavior: smooth;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.app .sections::-webkit-scrollbar {
+  display: none;
+}
+.app .sections .about {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  scroll-snap-align: start;
+}
+.app .sections .contest {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  scroll-snap-align: start;
+}
+.app .sections .payment {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  scroll-snap-align: start;
+}
+.app .sections .contact {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  scroll-snap-align: start;
+}
+.app .sections .footer {
+  width: 100vw;
+  height: 70px;
+  scroll-snap-align: start;
+}/*# sourceMappingURL=home.css.map */

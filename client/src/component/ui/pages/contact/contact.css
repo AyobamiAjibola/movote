@@ -1,0 +1,92 @@
+.contact {
+  background-color: #e7e5eb;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+  }
+}
+.contact .left {
+  flex: 1;
+  overflow: hidden;
+}
+.contact .left img {
+  height: 100%;
+}
+.contact .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.contact .right h2 {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: -60px;
+}
+@media (max-width: 768px) {
+  .contact .right h2 {
+    margin-bottom: 5px;
+    font-size: 30px;
+  }
+}
+.contact .right form {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  font-display: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact .right form input {
+  width: 60%;
+  height: 55px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .contact .right form input {
+    width: 90%;
+  }
+}
+.contact .right form textarea {
+  width: 100%;
+  height: 80%;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .contact .right form textarea {
+    margin-bottom: 10px;
+    height: 200px;
+  }
+}
+.contact .right form button {
+  width: 40%;
+  height: 50px;
+  padding: 5px 0px;
+  margin-bottom: 60px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  background-color: #15023a;
+  border: 0px;
+}
+@media (max-width: 768px) {
+  .contact .right form button {
+    height: 80px;
+  }
+}
+.contact .right form button:hover {
+  background-color: white;
+  border: 1px solid #666666;
+  transition: all 0.8s ease;
+  border-radius: 5px;
+  color: #15023a;
+  font-weight: 400;
+  box-shadow: 0px 0px 15px -8px black;
+}/*# sourceMappingURL=contact.css.map */

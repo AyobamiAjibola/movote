@@ -29,6 +29,9 @@ export default function AboutUs() {
                         .typeString(" Scroll to the package section.")
                         .start();
                     }}
+                    options={{
+                      loop: true,
+                    }}
                   />
                 </span>
               </span>
@@ -42,6 +45,9 @@ export default function AboutUs() {
                         .start();
                       }, 5000);
                     }}
+                    options={{
+                      loop: true,
+                    }}
                   />
                 </span>
               </span>
@@ -54,6 +60,9 @@ export default function AboutUs() {
                         .typeString(" And send us message.")
                         .start();
                       }, 10000);
+                    }}
+                    options={{
+                      loop: true,
                     }}
                   />
                 </span>

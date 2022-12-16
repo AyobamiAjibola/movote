@@ -31,7 +31,7 @@ export default function ContestantDetail() {
     method: 'GET',
     url: `/contestant/contestant/details/${id}`
   });
-console.log(data)
+
   const { response: contestType } = useAxios({
     method: 'GET',
     url: `/contestant/nonsense/${id}`

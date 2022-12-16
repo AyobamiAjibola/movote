@@ -116,7 +116,8 @@ router.post("/login", async (req: Request, res: Response) => {
             data: {
                 token,
                 user: {
-                    email: user.email
+                    id: user._id,
+                    isAdmin: user.isAdmin
                 }
             }
         });
